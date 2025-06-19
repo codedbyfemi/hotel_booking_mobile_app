@@ -61,6 +61,9 @@ flutter:
   assets:
     - assets/onbd.png
     - assets/icon.png
+    - assets/prv1.jpg
+    - assets/prv2.jpg
+    - assets/prv3.jpg
     - assets/hny/hny1.jpg
     - assets/hny/hny2.jpg
     - assets/hny/hny3.jpg

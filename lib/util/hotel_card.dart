@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking_mobile_app/pages/details_page.dart';
 
 class Hotelcard extends StatelessWidget {
   final String imageDir;
@@ -17,7 +18,9 @@ class Hotelcard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>  DetailsPage(imageDir: imageDir, title: title)));
+      },
       child: Container(
         width: 145,
         decoration: BoxDecoration(

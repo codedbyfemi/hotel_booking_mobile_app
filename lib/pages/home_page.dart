@@ -126,7 +126,8 @@ class HomePage extends StatelessWidget {
                           fillColor: Colors.white,
                           contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
                           border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30)
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none
                         )
                       ),
 
@@ -182,6 +183,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 15,),
           SizedBox(
             height: screenHeight * 0.2, // Height of your horizontal scroll section
             child: ListView.builder(
