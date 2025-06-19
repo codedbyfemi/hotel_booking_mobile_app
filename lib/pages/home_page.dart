@@ -84,33 +84,24 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(height: 24,),
                   Container(
-                    height: 41,
+                    height: 75,
                     padding: EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                    )
-                  )
-                ],
-              )
-            ],
-          ),
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                children: [
-                  Row(
+                    ),
+                    child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Hotel Near You", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),),
                       Text("View All", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xFF2C67FF)),)
                     ],
                   ),
+                  )
                 ],
-              ),
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -129,7 +120,7 @@ class HomePage extends StatelessWidget {
             label: 'Booking',
           ),
           BottomNavigationBarItem(
-            icon: IconButton(onPressed: (){}, icon: Icon(Icons.favorite)),
+            icon: IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_rounded)),
             label: 'Watchlist',
           ),
           BottomNavigationBarItem(
