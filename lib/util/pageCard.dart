@@ -2,18 +2,14 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-class Hotelcard extends StatelessWidget {
+class Pagecard extends StatelessWidget {
   final String imageDir;
   final String title;
-  final String subtitle;
-  final int price;
 
-  const Hotelcard({
+  const Pagecard({
     super.key,
     required this.imageDir,
     required this.title,
-    required this.subtitle,
-    required this.price,
   });
 
   @override
@@ -51,32 +47,16 @@ class Hotelcard extends StatelessWidget {
                     ),
                   ),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(title,
                           style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white)),
-                      Text(subtitle,
-                          style: TextStyle(
-                              fontSize: 10, color: Colors.white70)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("\$$price/night",
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600)),
-                          Row(
-                            children: [
-                              Icon(Icons.star, color: Colors.yellow, size: 14),
-                              Text("4.8", style: TextStyle(color: Colors.white))
-                            ],
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white
                           )
-                        ],
-                      )
+                      ),
+                      SizedBox(height: 14,)
                     ],
                   ),
                 ),

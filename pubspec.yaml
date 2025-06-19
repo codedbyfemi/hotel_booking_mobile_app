@@ -60,6 +60,13 @@ flutter:
 #   To add assets to your application, add an assets section, like this:
   assets:
     - assets/onbd.png
+    - assets/icon.png
+    - assets/hny/hny1.jpg
+    - assets/hny/hny2.jpg
+    - assets/hny/hny3.jpg
+    - assets/expl/expl.jpg
+    - assets/expl/expl1.jpg
+    - assets/expl/expl2.jpg
     - assets/home/hotel_booking_mobile_app.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

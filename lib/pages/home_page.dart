@@ -1,10 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking_mobile_app/util/hotelCard.dart';
+
+import '../util/pageCard.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+   HomePage({super.key});
+
+  final List<Map<String, dynamic>> hotels = [
+    {
+      "imageDir": "assets/hny/hny1.jpg",
+      "title": "Paradise Resort",
+      "subtitle": "Labuan Bajo",
+      "price": 480
+    },
+
+    {
+      "imageDir": "assets/hny/hny2.jpg",
+      "title": "Buntago",
+      "subtitle": "Labuan Bajo",
+      "price": 118
+    },
+
+    {
+      "imageDir": "assets/hny/hny3.jpg",
+      "title": "sultan",
+      "subtitle": "Labuan Bajo",
+      "price": 38
+    }
+
+  ];
+
+  final List<Map<String, dynamic>> pages = [
+    {
+      "imageDir": "assets/expl/expl.jpg",
+      "title": "Bali"
+    },
+
+    {
+      "imageDir": "assets/expl/expl1.jpg",
+      "title": "Labuan Bajo"
+    },
+
+    {
+      "imageDir": "assets/expl/expl2.jpg",
+      "title": "Lombok"
+    }
+
+  ];
+
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -46,9 +93,23 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        IconButton(
-                          icon: Icon(Icons.notifications),
-                          onPressed: () {},
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
+                              width: 40,
+                              height: 40,
+                              color: Colors.grey,
+
+                              // decoration: BoxDecoration(
+                              //   borderRadius: BorderRadius.circular()
+                              // ),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.notifications_rounded, color: Colors.white,),
+                              onPressed: () {},
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -56,31 +117,19 @@ class HomePage extends StatelessWidget {
                   SizedBox(height: 66,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.5),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
+                    child: TextField(
+                      decoration: InputDecoration(
+                          hintText: 'Look For Homestay',
+                          suffixIcon: Icon(Icons.search),
+                          filled: true,
+                          fillColor: Colors.white,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
+                          border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)
+                        )
                       ),
-                      padding: EdgeInsets.all(14),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Current Location',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          Icon(Icons.search),
-                        ],
-                      ),
-                    ),
+
+                    )
                   ),
                   SizedBox(height: 24,),
                   Container(
@@ -93,7 +142,7 @@ class HomePage extends StatelessWidget {
                     child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Hotel Near You", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),),
+                      Text("Hotel Near You", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),),
                       Text("View All", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xFF2C67FF)),)
                     ],
                   ),
@@ -102,33 +151,91 @@ class HomePage extends StatelessWidget {
               )
             ],
           ),
+          SizedBox(
+            height: 218, // Height of your horizontal scroll section
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              itemCount: hotels.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 12.0),
+                  child: Hotelcard(
+                    imageDir: hotels[index]['imageDir'],
+                    title: hotels[index]['title'],
+                    subtitle: hotels[index]['subtitle'],
+                    price: hotels[index]['price'],
+                  ),
+                );
+              },
+            ),
+          ),
+          Spacer(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Explore Place", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),),
+                Text("View All", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xFF2C67FF)),)
+              ],
+            ),
+          ),
+          SizedBox(
+            height: screenHeight * 0.2, // Height of your horizontal scroll section
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              itemCount: hotels.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 12.0),
+                  child: Pagecard(
+                    imageDir: pages[index]['imageDir'],
+                    title: pages[index]['title'],
+
+                  ),
+                );
+              },
+            ),
+          ),
+          SizedBox(height: 30,)
+
+
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         selectedItemColor: Color(0xFF2C67FF),
         unselectedItemColor: Colors.grey,
-        unselectedLabelStyle: TextStyle(color: Colors.grey),
-
-        items: [
+        // currentIndex: _currentIndex,
+        // onTap: (index) {
+        //   setState(() {
+        //     _currentIndex = index;
+        //   });
+        // },
+        items: const [
           BottomNavigationBarItem(
-            icon: IconButton(onPressed: (){}, icon: Icon(Icons.home_rounded)),
+            icon: Icon(Icons.home_rounded),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: IconButton(onPressed: (){}, icon: Icon(Icons.add_circle_outline)),
+            icon: Icon(Icons.book_online),
             label: 'Booking',
           ),
           BottomNavigationBarItem(
-            icon: IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_rounded)),
+            icon: Icon(Icons.favorite_border_rounded),
             label: 'Watchlist',
           ),
           BottomNavigationBarItem(
-            icon: IconButton(onPressed: (){}, icon: Icon(Icons.person)),
+            icon: Icon(Icons.person_outline),
             label: 'Profile',
           ),
         ],
       ),
+
+
     );
   }
 }
