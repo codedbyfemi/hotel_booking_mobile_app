@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking_mobile_app/util/hotelCard.dart';
+import 'package:hotel_booking_mobile_app/util/hotel_card.dart';
 
-import '../util/pageCard.dart';
+import '../util/page_card.dart';
 
 class HomePage extends StatelessWidget {
    HomePage({super.key});
@@ -71,6 +71,7 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        // ignore: sized_box_for_whitespace
                         Container(
                           width: 132,
                           child: Column(
