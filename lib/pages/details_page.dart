@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatelessWidget {
-  DetailsPage({super.key, required this.imageDir, required this.title, required this.price});
+  const DetailsPage({super.key, required this.imageDir, required this.title, required this.price});
 
   final String imageDir;
   final String title;
@@ -192,7 +192,7 @@ class DetailsPage extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1),
+              color: Color.fromRGBO(0, 0, 0, 0.1),
               blurRadius: 10,
               offset: Offset(0, -4),
             ),

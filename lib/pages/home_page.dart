@@ -100,11 +100,11 @@ class HomePage extends StatelessWidget {
                             Container(
                               width: 40,
                               height: 40,
-                              color: Colors.grey,
 
-                              // decoration: BoxDecoration(
-                              //   borderRadius: BorderRadius.circular()
-                              // ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                              color: Color.fromRGBO(255, 255, 255, 0.5),
+                              ),
                             ),
                             IconButton(
                               icon: Icon(Icons.notifications_rounded, color: Colors.white,),

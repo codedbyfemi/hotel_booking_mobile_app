@@ -39,7 +39,7 @@ class Pagecard extends StatelessWidget {
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Colors.black.withOpacity(0.8), Colors.transparent],
+                      colors: [Color.fromRGBO(0, 0, 0, 0.8), Colors.transparent],
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                     ),
