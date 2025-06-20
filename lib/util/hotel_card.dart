@@ -19,7 +19,7 @@ class Hotelcard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) =>  DetailsPage(imageDir: imageDir, title: title)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>  DetailsPage(imageDir: imageDir, title: title, price: price)));
       },
       child: Container(
         width: 145,

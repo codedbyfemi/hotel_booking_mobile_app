@@ -154,7 +154,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 218, // Height of your horizontal scroll section
+            height: screenHeight * 0.26, // Height of your horizontal scroll section
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.symmetric(horizontal: 16),
@@ -172,7 +172,7 @@ class HomePage extends StatelessWidget {
               },
             ),
           ),
-          Spacer(),
+          SizedBox(height: 15,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
@@ -183,9 +183,9 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: 12,),
           SizedBox(
-            height: screenHeight * 0.2, // Height of your horizontal scroll section
+            height: screenHeight * 0.1238862, // Height of your horizontal scroll section
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.symmetric(horizontal: 16),
